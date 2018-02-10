@@ -1,14 +1,23 @@
+      <div class="cheese">
+      <%= image_tag @picture.pic_img.url(:pic_show), class: "book-show" %>
+
+      <p>Title</p>
+      <h2>
+        <%= @picture.title %>
+      </h2>
+
+      <p>
+        <%= @picture.url %>
+      </p>
+
+      <% if user_signed_in? %>
+
+      <% if @picture.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_picture_path(@picture) %>
+      <%= link_to 'Back', pictures_path %>
+      <%= link_to 'Delete', picture_path(@picture), method: :delete, data: { confirm: "Are you 100% sure
+         you want to delete this post"} %>
+      <% end %>
+      <% end %>
+  
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @picture.title %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @picture.url %>
-</p>
-
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>

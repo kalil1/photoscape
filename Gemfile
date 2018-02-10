@@ -10,6 +10,14 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+gem 'paperclip', '~> 5.2', '>= 5.2.1'
+
+gem 'simple_form', '~> 3.5'
+
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+
+gem 'devise', '~> 4.4', '>= 4.4.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

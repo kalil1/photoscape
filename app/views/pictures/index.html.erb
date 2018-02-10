@@ -1,29 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pictures</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+		<% @pictures.each do |picture| %>
 
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.title %></td>
-        <td><%= picture.url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+			<div class="col-md-3">
+				<a href="/pictures/<%= picture.id %>">
+					<%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+				</a>
+			</div>
 
-<br>
+		<% end %>
 
-<%= link_to 'New Picture', new_picture_path %>
+	</div>
