@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+html, body {
+height: 100%;
+}
+body {
+background: linear-gradient(to bottom right, #77C9D4, purple, #57BC90)
+
+}
+
+// body > nav > div > div > a {
+//   font-size: 30px!important;
+// }
+
+a.navbar-brand {
+  font-size: 30px;
+}
 
 .container {
 background-color: white;
