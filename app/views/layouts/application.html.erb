@@ -8,40 +8,66 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Compiled and minified Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
 
-		<div class="container">
+  		<div class="container">
 
-			<div class="navbar-header">
-				<%= link_to "Photo Explore", root_path, class: "navbar-brand" %>
-			</div>
+  			<div class="navbar-header">
+  				<%= link_to "Photo Explore", root_path, class: "navbar-brand" %>
+  			</div>
 
-			<ul class="nav navbar-nav">
-				<% if user_signed_in? %>
-					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-				<% else %>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-					<li><%= link_to "Log In", new_user_session_path %></li>
-				<% end %>
-			</ul>
+  			<ul class="nav navbar-nav">
+  				<% if user_signed_in? %>
+  					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  				<% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+  					<li><%= link_to "Log In", new_user_session_path %></li>
+  				<% end %>
+  			</ul>
 
-			<ul class="nav navbar-nav navbar-right">
-				<% if user_signed_in? %>
-					<li><%= link_to "Upload", new_picture_path %></li>
-				<% end %>
+  			<ul class="nav navbar-nav navbar-right">
+  				<% if user_signed_in? %>
+  					<li><%= link_to "Upload", new_picture_path %></li>
+  				<% end %>
 
-			</ul>
+  			</ul>
 
-		</div>
+  		</div>
 
-	</nav>
+  	</nav>
 
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <h1>Oasis</h1>
+      <header>
+      <!-- Website Title, Login-in, and Search Bar -->
+      </header>
+    </div>
 
-  <div class="container">
-		<%= yield %>
-	</div>
+    <div class="content">
+    <!-- Search Results of City Pictures and Top Destinations. -->
+    </div>
 
-</body>
+    <footer>
+      <!-- Copyright and Attributions -->
+    </footer>
+
+    <%= yield %>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
 </html>
