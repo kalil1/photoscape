@@ -211,11 +211,8 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-<<<<<<< HEAD
   nokogiri
-=======
   materialize-sass
->>>>>>> f6c00600da11d3a176e10c140ed56ef9f94ec89d
   paperclip (~> 5.2, >= 5.2.1)
   puma (~> 3.7)
   rails (~> 5.1.4)
