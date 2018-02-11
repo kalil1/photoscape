@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Medium</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>BookReview</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Compiled and minified Bootstrap-->
@@ -16,9 +20,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <nav class="navbar navbar-default">
 
+  		<div class="container">
+
+  			<div class="navbar-header">
+  				<%= link_to "Photo Explore", root_path, class: "navbar-brand" %>
+  			</div>
+
+  			<ul class="nav navbar-nav">
+  				<% if user_signed_in? %>
+  					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  				<% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+  					<li><%= link_to "Log In", new_user_session_path %></li>
+  				<% end %>
+  			</ul>
+
+  			<ul class="nav navbar-nav navbar-right">
+  				<% if user_signed_in? %>
+  					<li><%= link_to "Upload", new_picture_path %></li>
+  				<% end %>
+
+  			</ul>
+
+  		</div>
+
+  	</nav>
+
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="container">
       <h1>Oasis</h1>
       <header>
@@ -35,5 +66,8 @@
     </footer>
 
     <%= yield %>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
   </body>
 </html>
