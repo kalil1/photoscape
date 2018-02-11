@@ -15,6 +15,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
   @picture = current_user.pictures.build
+  @locations = Location.all.map{ |c| [l.name, l.id]}
 end
 
   # GET /pictures/1/edit
@@ -25,6 +26,7 @@ end
   # POST /pictures.json
   def create
 @picture = current_user.pictures.build(picture_params)
+@picture.location_id = params[:location_id]
 
     respond_to do |format|
       if @picture.save
