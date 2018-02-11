@@ -5,6 +5,53 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all.order("created_at DESC")
+
+    # Start of destination scrape
+destUrl = "http://www.10best.com/destinations/all/"
+
+destResponse = HTTParty.get(destUrl)
+# p response.headers['Content-Type']
+
+#String => Nokgiri::HTML => DocumentObjectModel (DOM)
+destDom = Nokogiri::HTML(destResponse.body)
+# p dom.css('html') #gives everything wthin the html tag
+
+destinations = destDom.css('a.rss')
+
+@cities = []
+destinations.each do |city|
+  @cities << city.text
+end
+
+@links = []
+destinations.each do |link|
+  @links << 'http://www.10best.com' + link['href']
+end
+# End of destination scrape
+
+# Start of attractions scrape
+attrUrl = "http://www.10best.com/destinations/new-mexico/albuquerque/attractions/best-attractions-activities/"
+attrResponse = HTTParty.get(attrUrl)
+
+#String => Nokgiri::HTML => DocumentObjectModel (DOM)
+attrDom = Nokogiri::HTML(attrResponse.body)
+# p dom.css('html') #gives everything wthin the html tag
+
+attractions = attrDom.css('.list-headline h2')
+
+@venue = []
+attractions.each do |place|
+  @venue << place.text
+end
+
+images = attrDom.css('img.lazy')
+
+@image = []
+images.each do |picture|
+  @image << 'https:' + picture['data-src']
+end
+# End of attractions scrape
+
   end
 
   # GET /pictures/1
