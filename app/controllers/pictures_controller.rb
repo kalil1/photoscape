@@ -15,11 +15,12 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
   @picture = current_user.pictures.build
-  @locations = Location.all.map{ |c| [l.name, l.id]}
+  @locations = Location.all.map{ |l| [l.name, l.id]}
 end
 
   # GET /pictures/1/edit
   def edit
+    @locations = Location.all.map{ |l| [l.name, l.id]}
   end
 
   # POST /pictures
@@ -30,6 +31,8 @@ end
 
     respond_to do |format|
       if @picture.save
+
+
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
