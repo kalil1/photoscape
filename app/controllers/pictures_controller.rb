@@ -44,12 +44,25 @@ attractions.each do |place|
   @venue << place.text
 end
 
+# Get two random attractions and give them their own variables
+@venues = @venue.sample(2)
+@venue_one = @venues[0]
+@venue_two = @venues[1]
+
+# Index of random photo to grab correct picture
+@index_one = @venue.index(@venue_one)
+@index_two = @venue.index(@venue_two)
+
 images = attrDom.css('img.lazy')
 
 @image = []
 images.each do |picture|
   @image << 'https:' + picture['data-src']
 end
+
+# Select image link based on index of random photo
+@image_one = @image[@index_one]
+@image_two = @image[@index_two]
 # End of attractions scrape
 
   end

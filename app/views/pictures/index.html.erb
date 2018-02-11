@@ -2,14 +2,21 @@
 
 <div class="row">
 
-		<% @pictures.each do |picture| %>
+  <% @pictures.each do |picture| %>
 
-			<div class="col-md-3">
-				<a href="/pictures/<%= picture.id %>">
-					<%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-				</a>
-			</div>
+  <div class="col-md-3">
+    <a href="/pictures/<%= picture.id %>">
+      <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+    </a>
+  </div>
 
-		<% end %>
+  <% end %>
 
-	</div>
+</div>
+
+<div class="attractions">
+  <p><%= @venue_one %><br>
+    <img src ="<%= @image_one %>"</p>
+    <p><%= @venue_two %><br>
+      <img src ="<%= @image_two %>"</p>
+    </div>
