@@ -1,39 +1,50 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 html, body {
-height: 100%;
-}
-body {
-background: linear-gradient(to bottom right, #77C9D4, purple, #57BC90)
-
+  height: 100%;
 }
 
-// body > nav > div > div > a {
-//   font-size: 30px!important;
-// }
+
 
 a.navbar-brand {
   font-size: 30px;
 }
 
-.container {
-background-color: white;
-height: 100px;
-width: 100vw;
-text-align: center;
-color: black;
-font-family: 'Monoton', cursive;
+.navbar-default {
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-family: 'Monoton', cursive;
+}
+
+body > h3 {
+  color: white;
+  text-align: center;
+  text-shadow: rgba(0,0,0,.6) 1px 1px 10px;
+  font-size: 50px;
+  font-family: 'Anton', sans-serif;
+}
+
+.attractions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.attractions img {
+  width: 300px;
+  background: white;
+  padding:8px;
 }
