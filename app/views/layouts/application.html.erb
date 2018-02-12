@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FOTOSCAPE</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <!-- Compiled and minified Bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!--Compiled and minified Font Awesome-->
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <!--Import Google Icon Font(Monoton)-->
-  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-  <!--Import Google Icon Font(Anton)-->
-<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
+  <head>
+    <title>FOTOSCAPE</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Compiled and minified Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!--Import Google Icon Font(Monoton)-->
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <!--Import Google Icon Font(Anton)-->
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <body>
 
-    <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
 
-      <div class="navbar-header">
-        <%= link_to "FOTOSCAPE", root_path, class: "navbar-brand" %>
+      <div class="container">
+
+        <div class="navbar-header">
+          <%= link_to "FOTOSCAPE", root_path, class: "navbar-brand" %>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li><%= link_to "Upload", new_picture_path %></li>
+          <% end %>
+        </ul>
+
       </div>
 
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Log In", new_user_session_path %></li>
-        <% end %>
-      </ul>
+    </nav>
 
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-        <li><%= link_to "Upload", new_picture_path %></li>
-        <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-      </ul>
+    <%= yield %>
 
-    </div>
+    <footer>
+      <div class="container">
+        <div class="row vcenter">
+          <div class="pull-left col-lg-4 col-xs-12">
+            <p>Copyright &copy;2018 </p>
+          </div>
+          <div class="col-lg-4 col-lg-offset-4 col-xs-12">
+            <div class="pull-right">
+              <a href="https://www.10best.com">Top Attractions via www.10best.com<br>City photos via Flickr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-  </nav>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-
-
-
-  <%= yield %>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-</body>
+  </body>
 </html>

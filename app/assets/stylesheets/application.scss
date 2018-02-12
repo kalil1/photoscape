@@ -31,7 +31,7 @@ a.navbar-brand {
   font-family: 'Monoton', cursive;
 }
 
-body > h3 {
+div h3 {
   color: white;
   text-align: center;
   text-shadow: rgba(0,0,0,.8) 1px 1px 10px;
@@ -39,7 +39,9 @@ body > h3 {
   font-family: 'Anton', sans-serif;
 }
 
-body > div.city-pics {
+
+
+div.city-pics {
   text-align: center;
 }
 
@@ -57,4 +59,10 @@ body > div.city-pics {
 .attractions img {
   width: 300px;
   padding:8px;
+}
+
+footer a {
+font-family: verdana, arial, helvetica, sans-serif;
+font-size: 13px;
+line-height: 18px;
 }
