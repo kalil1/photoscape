@@ -42,6 +42,8 @@ class PicturesController < ApplicationController
 
     # @flickrpics = @flickrsearch.map {|f| "<img src='#{f}'>"}
 
+    @cityQuery = "Seattle, WA"
+    cat = "landmarks"
 
     # End of Flickraw API
 
