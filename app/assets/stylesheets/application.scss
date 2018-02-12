@@ -15,23 +15,84 @@
 */
 html, body {
   height: 100%;
-
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f3f3f2;
+  font-family: Raleway, sans-serif;
+}
 
+h2 {
+  font-family: "Abril Fatface", sans-serif;
+  font-size: 3em;
+}
 
-a.navbar-brand {
-  font-size: 30px;
+.container {
+  width: 90%;
+}
+
+.navbar {
+  padding: 1em;
+}
+
+.navbar-default .navbar-brand {
+  color: #40afb0;
+  font-size: 3em;
+  line-height: 5px;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: #6dc1c3;
 }
 
 .navbar-default {
   background-color: white;
   text-align: center;
-  color: black;
   font-family: 'Monoton', cursive;
 }
 
-div h3 {
+.btn, .btn:hover {
+  box-shadow: none;
+}
+
+.btn.primary, .btn.primary:active, .btn.primary:visited {
+  background-color: #f78528; //#f9a826
+}
+
+.btn.primary:hover {
+  background-color: #f9a826;
+}
+
+.btn.secondary, .btn.secondary:active, .btn.secondary:visited {
+  background-color: #e7486b; //#e84f84
+}
+
+.btn.secondary:hover {
+  background-color: #f17792;
+}
+
+.navbar .btn {
+  color: white;
+}
+
+
+// .btn .primary, .btn .primary:hover, .btn:active, .btn:visited {
+//     background-color: #8064A2;
+// }
+
+.city-pics img {
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: #fff;
+  border: 3px solid #6dc1c3;
+}
+
+body > h3 {
   color: white;
   text-align: center;
   text-shadow: rgba(0,0,0,.8) 1px 1px 10px;
@@ -39,16 +100,12 @@ div h3 {
   font-family: 'Anton', sans-serif;
 }
 
-
-
-div.city-pics {
-  text-align: center;
-}
-
-.city-pics img {
-  width: 400px;
-  height: 400px;
-
+.todo {
+  background-color: #f78528;
+  margin-top: 3em;
+  color: white;
+  border: 10px solid white;
+  border-width: 10px 0;
 }
 
 .attractions {

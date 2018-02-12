@@ -9,37 +9,43 @@
     <div class="col-md-3">
       <a href="/pictures/<%= picture.id %>">
         <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+        <% end %>
+        <!-- dslvnlnfdlkndvs -->
       </a>
     </div>
 
-    <% end %>
 
-  </div>
 
   <div class="city-pics">
-    <% @flickrsearch.sample(10).each do |f| %>
-    <%= image_tag f %>
+    <% @flickrsearch.sample(12).each do |f| %>
+    <div class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></div>
     <% end %>
-  </div>
-
-  <!-- <%= @flickrpics %> -->
-
-  <!-- <img src="<%= @firstRecent %>"> -->
-
-  <h3>Things To Do</h3>
-
-  <div class="attractions">
-
-    <p>
-      <%= @venue_one %><br>
-      <img src ="<%= @image_one %>"
-    </p>
-
-    <p>
-      <%= @venue_two %><br>
-      <img src ="<%= @image_two %>"
-    </p>
-
   </div>
 
 </div>
+
+
+<div class="todo">
+  <div class="container">
+    <h2>Top Attractions</h2>
+
+    <div class="attractions">
+
+      <p>
+        <%= @venue_one %><br>
+        <img src ="<%= @image_one %>"
+      </p>
+
+      <p>
+        <%= @venue_two %><br>
+        <img src ="<%= @image_two %>"
+      </p>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+
+</footer>
