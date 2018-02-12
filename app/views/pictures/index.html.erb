@@ -4,21 +4,7 @@ Search stuff!
 
 <div class="container">
 
-<section>
-<div class="city-pics">
 
- <% @pictures.each do |picture| %>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-     <a href="/pictures/<%= picture.id %>">
-       <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-       <% end %>
-       <!-- dslvnlnfdlkndvs -->
-     </a>
-   </div>
- </div>
-</section>
-
-<body>
 
  <div class="city-pics">
    <% @flickrsearch.sample(12).each do |f| %>
@@ -49,4 +35,13 @@ Search stuff!
  </div>
 
 </div>
-</body>
+
+<!-- <div class="user-pics">
+  <% @pictures.each do |picture| %>
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <a href="/pictures/<%= picture.id %>">
+      <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+      <% end %>
+    </a>
+  </div>
+</div> -->
