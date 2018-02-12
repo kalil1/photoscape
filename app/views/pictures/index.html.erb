@@ -5,10 +5,6 @@ Search stuff!
 <div class="container">
 
 <section>
-<% if @pictures.count == 0 %>
-<h1>This Place Is Too Boring</h1>
-<% else %>
-
 <div class="city-pics">
 
   <% @pictures.each do |picture| %>
@@ -19,7 +15,6 @@ Search stuff!
         <!-- dslvnlnfdlkndvs -->
       </a>
     </div>
-    <% end %>
   </div>
 </section>
 
