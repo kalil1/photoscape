@@ -9,16 +9,12 @@
     <div class="col-md-3">
       <a href="/pictures/<%= picture.id %>">
         <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+        <% end %>
+        <!-- dslvnlnfdlkndvs -->
       </a>
     </div>
 
 
-	</div>
-	<% end %>
-<!-- dslvnlnfdlkndvs -->
-</div>
-
-  </div>
 
   <div class="city-pics">
     <% @flickrsearch.sample(12).each do |f| %>
@@ -50,7 +46,6 @@
 
 </div>
 
-</div>
 <footer>
 
 </footer>
