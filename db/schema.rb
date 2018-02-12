@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180210234202) do
     t.integer "pic_img_file_size"
     t.datetime "pic_img_updated_at"
     t.integer "user_id"
+    t.integer "location_id"
   end
 
   create_table "users", force: :cascade do |t|
