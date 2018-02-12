@@ -30,18 +30,14 @@
         <ul>
           <div class="btn-group">
             <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn primary" %></li>
+              <li><%= link_to "Upload", new_picture_path, { :class=>"btn primary" } %></li>
             <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path, { :class=>"btn primary" } %></li>
             <li><%= link_to "Log In", new_user_session_path, { :class=>"btn secondary" } %></li>
             <% end %>
           </ul>
 
-          <ul>
-            <% if user_signed_in? %>
-            <li><%= link_to "Upload", new_picture_path, { :class=>"btn primary" } %></li>
-            <% end %>
-          </ul>
         </div>
 
       </div>
