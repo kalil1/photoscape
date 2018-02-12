@@ -1,16 +1,19 @@
-<div class="container">
+<h1 class="current-location"><%= params[:location] %></h1>
 
-  <p id="notice"><%= notice %></p>
+<% if @pictures.count == 0 %>
+<h1>This Place Is Too Boring</h1>
+<% else %>
+<div class="row">
 
-  <div class="row">
+  <% @pictures.each do |picture| %>
 
-    <% @pictures.each do |picture| %>
+  <div class="col-md-3">
+    <a href="/pictures/<%= picture.id %>">
+      <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+    </a>
+  </div>
 
-    <div class="col-md-3">
-      <a href="/pictures/<%= picture.id %>">
-        <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-      </a>
-    </div>
+  <% end %>
 
 
 	</div>
@@ -18,34 +21,28 @@
 <!-- dslvnlnfdlkndvs -->
 </div>
 
-  </div>
+<div class="city-pics">
+  <% @flickrsearch.sample(10).each do |f| %>
+  <%= image_tag f %>
+  <% end %>
+</div>
 
-  <div class="city-pics">
-    <% @flickrsearch.sample(10).each do |f| %>
-    <%= image_tag f %>
-    <% end %>
-  </div>
+<!-- <%= @flickrpics %> -->
 
-  <!-- <%= @flickrpics %> -->
+<!-- <img src="<%= @firstRecent %>"> -->
 
-  <!-- <img src="<%= @firstRecent %>"> -->
+<h3>Things To Do</h3>
 
-  <h3>Things To Do</h3>
+<div class="attractions">
 
-  <div class="attractions">
+  <p>
+    <%= @venue_one %><br>
+    <img src ="<%= @image_one %>"
+  </p>
 
-    <p>
-      <%= @venue_one %><br>
-      <img src ="<%= @image_one %>"
-    </p>
+  <p>
+    <%= @venue_two %><br>
+    <img src ="<%= @image_two %>"
+  </p>
 
-    <p>
-      <%= @venue_two %><br>
-      <img src ="<%= @image_two %>"
-    </p>
-
-  </div>
-  <footer>
-
-  </footer>
 </div>
