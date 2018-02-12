@@ -21,7 +21,13 @@
 <!-- dslvnlnfdlkndvs -->
 </div>
 
-<%= @flickrsearch %>
+<div class="city-pics">
+  <% @flickrsearch.sample(10).each do |f| %>
+  <%= image_tag f %>
+  <% end %>
+</div>
+
+<!-- <%= @flickrpics %> -->
 
 <!-- <img src="<%= @firstRecent %>"> -->
 

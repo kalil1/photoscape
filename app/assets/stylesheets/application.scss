@@ -15,6 +15,7 @@
 */
 html, body {
   height: 100%;
+
 }
 
 
@@ -33,9 +34,19 @@ a.navbar-brand {
 body > h3 {
   color: white;
   text-align: center;
-  text-shadow: rgba(0,0,0,.6) 1px 1px 10px;
+  text-shadow: rgba(0,0,0,.8) 1px 1px 10px;
   font-size: 50px;
   font-family: 'Anton', sans-serif;
+}
+
+body > div.city-pics {
+  text-align: center;
+}
+
+.city-pics img {
+  width: 400px;
+  height: 400px;
+
 }
 
 .attractions {
@@ -45,6 +56,5 @@ body > h3 {
 
 .attractions img {
   width: 300px;
-  background: white;
   padding:8px;
 }
