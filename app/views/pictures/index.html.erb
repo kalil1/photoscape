@@ -14,9 +14,11 @@
 
 </div>
 
-<% @flickrsearch.sample(10).each do |f| %>
-<%= image_tag f %>
-<% end %>
+<div class="city-pics">
+  <% @flickrsearch.sample(10).each do |f| %>
+  <%= image_tag f %>
+  <% end %>
+</div>
 
 <!-- <%= @flickrpics %> -->
 
