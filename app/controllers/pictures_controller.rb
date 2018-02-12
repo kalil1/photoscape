@@ -18,19 +18,19 @@ class PicturesController < ApplicationController
     # Start of Flickraw API
     FlickRaw.api_key="3d403357fbd5a290f43a9b6cd0216a4a"
     FlickRaw.shared_secret="7ea1e588cac6c790"
+    #
+    # @first = flickr.places.find(:query => 'miami')
+    #
+    # # info = flickr.places.find(:query => 'miami')
+    # # @flickinfo = FlickRaw.url(info)
+    #
+    # new_b = flickr.places.find :query => "new brunswick"
+    # latitude = new_b[0]['latitude'].to_f
+    # longitude = new_b[0]['longitude'].to_f
 
-    @first = flickr.places.find(:query => 'miami')
-
-    # info = flickr.places.find(:query => 'miami')
-    # @flickinfo = FlickRaw.url(info)
-
-    new_b = flickr.places.find :query => "new brunswick"
-    latitude = new_b[0]['latitude'].to_f
-    longitude = new_b[0]['longitude'].to_f
-
-    # within 60 miles of new brunswick, let's use a bbox
-    radius = 1
-    args = {:tags => 'miami'}
+    # # within 60 miles of new brunswick, let's use a bbox
+    # radius = 1
+    args = {:tags => 'miami graffiti'}
     # args[:bbox] = "#{longitude - radius},#{latitude - radius},#{longitude + radius},#{latitude + radius}"
     #
     # # requires a limiting factor, so let's give it one
