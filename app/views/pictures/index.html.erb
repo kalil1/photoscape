@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1 class="current-location"><%= params[:location] %></h1>
 
+<% if @pictures.count == 0 %>
+<h1>This Place Is Too Boring</h1>
+<% else %>
 <div class="row">
 
   <% @pictures.each do |picture| %>
@@ -12,6 +15,10 @@
 
   <% end %>
 
+
+	</div>
+	<% end %>
+<!-- dslvnlnfdlkndvs -->
 </div>
 
 <%= @flickrsearch %>
