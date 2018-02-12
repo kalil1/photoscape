@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
   end
 
 
-    @cityQuery = "Dubai"
+    @cityQuery = "Seattle, WA"
     cat = "landmarks"
 
     @citySelect = @cityQuery.split(",")[0]
