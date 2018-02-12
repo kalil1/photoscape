@@ -1,41 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<div class="row">
+  <p id="notice"><%= notice %></p>
 
-  <% @pictures.each do |picture| %>
+  <div class="row">
 
-  <div class="col-md-3">
-    <a href="/pictures/<%= picture.id %>">
-      <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-    </a>
+    <% @pictures.each do |picture| %>
+
+    <div class="col-md-3">
+      <a href="/pictures/<%= picture.id %>">
+        <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+      </a>
+    </div>
+
+    <% end %>
+
   </div>
 
-  <% end %>
+  <div class="city-pics">
+    <% @flickrsearch.sample(10).each do |f| %>
+    <%= image_tag f %>
+    <% end %>
+  </div>
 
-</div>
+  <!-- <%= @flickrpics %> -->
 
-<div class="city-pics">
-  <% @flickrsearch.sample(10).each do |f| %>
-  <%= image_tag f %>
-  <% end %>
-</div>
+  <!-- <img src="<%= @firstRecent %>"> -->
 
-<!-- <%= @flickrpics %> -->
+  <h3>Things To Do</h3>
 
-<!-- <img src="<%= @firstRecent %>"> -->
+  <div class="attractions">
 
-<h3>Things To Do</h3>
+    <p>
+      <%= @venue_one %><br>
+      <img src ="<%= @image_one %>"
+    </p>
 
-<div class="attractions">
+    <p>
+      <%= @venue_two %><br>
+      <img src ="<%= @image_two %>"
+    </p>
 
-  <p>
-    <%= @venue_one %><br>
-    <img src ="<%= @image_one %>"
-  </p>
+  </div>
+  <footer>
 
-  <p>
-    <%= @venue_two %><br>
-    <img src ="<%= @image_two %>"
-  </p>
-
+  </footer>
 </div>
