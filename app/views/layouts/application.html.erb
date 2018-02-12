@@ -30,35 +30,59 @@
         <ul>
           <div class="btn-group">
             <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn primary" %></li>
+              <li><%= link_to "Upload", new_picture_path, { :class=>"btn primary" } %></li>
             <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path, { :class=>"btn primary" } %></li>
             <li><%= link_to "Log In", new_user_session_path, { :class=>"btn secondary" } %></li>
             <% end %>
           </ul>
 
-          <ul>
-            <% if user_signed_in? %>
-            <li><%= link_to "Upload", new_picture_path, { :class=>"btn primary" } %></li>
-            <% end %>
-          </ul>
         </div>
 
       </div>
 
-    </div>
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
 
-  </nav>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li><%= link_to "Upload", new_picture_path %></li>
+          <% end %>
+        </ul>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      </div>
 
+    </nav>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
+    <%= yield %>
 
-  <%= yield %>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <footer>
+      <div class="container">
+        <div class="row vcenter">
+          <div class="pull-left col-lg-4 col-xs-12">
+            <p>Copyright &copy;2018 </p>
+          </div>
+          <div class="col-lg-4 col-lg-offset-4 col-xs-12">
+            <div class="pull-right">
+              <a href="https://www.10best.com">Top Attractions via www.10best.com<br>City photos via Flickr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-</body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
 </html>
