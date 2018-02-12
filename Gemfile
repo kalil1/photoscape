@@ -57,7 +57,6 @@ group :development do
   gem 'materialize-sass'
   gem 'nokogiri'
   gem 'httparty'
-  gem 'flickr.rb', '~> 1.2', '>= 1.2.1'
   gem 'flickraw'
 end
 

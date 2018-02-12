@@ -14,7 +14,11 @@
 
 </div>
 
-<%= @flickrsearch %>
+<% @flickrsearch.each do |f| %>
+<%= image_tag f %>
+<% end %>
+
+<!-- <%= @flickrpics %> -->
 
 <!-- <img src="<%= @firstRecent %>"> -->
 
