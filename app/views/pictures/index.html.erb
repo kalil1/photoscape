@@ -1,20 +1,24 @@
-<div class="container">
 
-  <p id="notice"><%= notice %></p>
+<section>
+<% if @pictures.count == 0 %>
+<h1>This Place Is Too Boring</h1>
+<% else %>
 
-  <div class="row">
+<div class="city-pics">
 
-    <% @pictures.each do |picture| %>
-
-    <div class="col-md-3">
+  <% @pictures.each do |picture| %>
+    <div class="col-md-4 col-sm-6 col-xs-12">
       <a href="/pictures/<%= picture.id %>">
         <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
         <% end %>
         <!-- dslvnlnfdlkndvs -->
       </a>
     </div>
+    <% end %>
+  </div>
+</section>
 
-
+<body>
 
   <div class="city-pics">
     <% @flickrsearch.sample(12).each do |f| %>
@@ -33,18 +37,19 @@
 
       <p>
         <%= @venue_one %><br>
-        <img src ="<%= @image_one %>"
+        <img src ="<%= @image_one %>">
       </p>
 
       <p>
         <%= @venue_two %><br>
-        <img src ="<%= @image_two %>"
+        <img src ="<%= @image_two %>">
       </p>
 
     </div>
   </div>
 
 </div>
+</body>
 
 <footer>
 
