@@ -7,46 +7,46 @@ Search stuff!
 <section>
 <div class="city-pics">
 
-  <% @pictures.each do |picture| %>
-    <div class="col-md-4 col-sm-6 col-xs-12">
-      <a href="/pictures/<%= picture.id %>">
-        <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-        <% end %>
-        <!-- dslvnlnfdlkndvs -->
-      </a>
-    </div>
-  </div>
+ <% @pictures.each do |picture| %>
+   <div class="col-md-4 col-sm-6 col-xs-12">
+     <a href="/pictures/<%= picture.id %>">
+       <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+       <% end %>
+       <!-- dslvnlnfdlkndvs -->
+     </a>
+   </div>
+ </div>
 </section>
 
 <body>
 
-  <div class="city-pics">
-    <% @flickrsearch.sample(12).each do |f| %>
-    <div class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></div>
-    <% end %>
-  </div>
+ <div class="city-pics">
+   <% @flickrsearch.sample(12).each do |f| %>
+   <div class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></div>
+   <% end %>
+ </div>
 
 </div>
 
 
 <div class="todo">
-  <div class="container">
-    <h2>Top Attractions</h2>
+ <div class="container">
+   <h2>Top Attractions</h2>
 
-    <div class="attractions">
+   <div class="attractions">
 
-      <p>
-        <%= @venue_one %><br>
-        <img src ="<%= @image_one %>">
-      </p>
+     <p>
+       <%= @venue_one %><br>
+       <img src ="<%= @image_one %>">
+     </p>
 
-      <p>
-        <%= @venue_two %><br>
-        <img src ="<%= @image_two %>">
-      </p>
+     <p>
+       <%= @venue_two %><br>
+       <img src ="<%= @image_two %>">
+     </p>
 
-    </div>
-  </div>
+   </div>
+ </div>
 
 </div>
 </body>

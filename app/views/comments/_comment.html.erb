@@ -1,0 +1,21 @@
+<div class="review">
+
+	<p class="review-comment"><%= comment.text%></p>
+
+
+	<% if user_signed_in? %>
+
+		<% if comment.user_id == current_user.id %>
+
+			<div class="links btn-group">
+
+				<%= link_to "Edit", edit_picture_comment_path(comment.picture, comment), class: "btn btn-custom" %>
+				<%= link_to "Delete", picture_comment_path(comment.picture, comment), method: :delete, data: { confirm: "Are you sure?" }, %>
+
+			</div>
+
+		<% end %>
+
+	<% end %>
+
+</div>
