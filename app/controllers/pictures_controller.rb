@@ -5,7 +5,13 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
+    if params[:location].blank?
     @pictures = Picture.all.order("created_at DESC")
+  else
+    @location_id = Location.find_by(name: params[:location]).id
+    @pictures = Picture.where(:location_id => @location_id).order("created_at DESC")
+  end
+
 
     @cityQuery = "Dubai"
     cat = "landmarks"
@@ -104,35 +110,25 @@ class PicturesController < ApplicationController
 
   # GET /pictures/new
   def new
-  @picture = current_user.pictures.build
-  @locations = Location.all.map{ |l| [l.name, l.id]}
-end
+		@picture = current_user.pictures.build
+		@categories = Location.all.map{ |c| [c.name, c.id] }
+	end
 
-  # GET /pictures/1/edit
+	def create
+		@picture = current_user.pictures.build(picture_params)
+		@picture.location_id = params[:location_id]
+
+		if @picture.save
+			redirect_to root_path
+		else
+			render 'new'
+		end
+	end
+
+  # PATCH/PUT /pictures/1
   def edit
     @locations = Location.all.map{ |l| [l.name, l.id]}
   end
-
-  # POST /pictures
-  # POST /pictures.json
-  def create
-    @picture = current_user.pictures.build(picture_params)
-    @picture.location_id = params[:location_id]
-
-    respond_to do |format|
-      if @picture.save
-
-
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-        format.json { render :show, status: :created, location: @picture }
-      else
-        format.html { render :new }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /pictures/1
   # PATCH/PUT /pictures/1.json
   def update
     respond_to do |format|
@@ -164,6 +160,6 @@ end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def picture_params
-    params.require(:picture).permit(:title, :url, :pic_img)
+    params.require(:picture).permit(:title, :url, :pic_img, :location)
   end
 end
