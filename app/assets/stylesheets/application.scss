@@ -106,17 +106,54 @@ h2 {
   font-size: 1.4em;
 }
 
-// Search bar
-.input-group {
+.citySearch {
+  display: flex;
   width: 50%;
-  margin: 0 auto;
+  margin: 50px auto 0;
 }
-input:not([type]) {
+
+input[type=text].valid:not(.browser-default) {
+  border-bottom: 2px solid #41a69a;
+  color: #686868;
+}
+
+input:not([type]), input[type=text]:not(.browser-default) {
   background-color: #fff;
-  height: 2.4rem;
-  padding: 0 10px;
+  height: 1.9em;
+  padding: 0 20px;
   font-size: 2em;
+  border-bottom: 3px solid #41a69a;
+  color: #686868;
 }
+
+.citySearch .btn {
+  height: 2.7em;
+  font-size: 1.5em;
+  padding: 0.5em 0.7em;
+    border-radius: 0;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.citySearch .btn:hover, .citySearch a:visited {
+  color: #fff;
+}
+
+.dropdown-content li>a, .dropdown-content li>span, .citySearch li>a:visited {
+  text-decoration: none;
+  color: #686868;
+}
+
+.dropdown-content li>a:hover {
+  background-color: #26a69a;
+  color: #fff;
+}
+
+.btn i {
+  font-size: 37px;
+}
+
+//Flicr City Pics
 
 .city-pics img {
   object-fit: cover;

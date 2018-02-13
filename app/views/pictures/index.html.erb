@@ -1,8 +1,27 @@
 <div class="search">
   <h1>You know you're in <span><%= @cityQuery %></span> when...</h1>
-  <p>...you take in the familiar landmarks, cuisine, teams and skyline.</p>
-  <p>Search for your favorite city or discover somewhere new!</p>
-  
+  <p>...you experience its distinct landmarks, cuisine and skyline.</p>
+  <p>Search FOTOSCAPE for your favorite city or discover somewhere new!</p>
+
+  <div class="citySearch">
+    <input value="Explore A City" id="find_city" type="text" class="validate">
+
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-button btn' href='#' data-activates='category'>Category<i class="material-icons">arrow_drop_down</i></a>
+
+    <!-- Dropdown Structure -->
+    <ul id='category' class='dropdown-content'>
+      <li><a href="#!">Landmarks</a></li>
+      <li><a href="#!">Skyline</a></li>
+      <li><a href="#!">Cuisine</a></li>
+      <li><a href="#!">Neighborhoods</a></li>
+      <li><a href="#!">Weather</a></li>
+    </ul>
+
+    <a class="btn">Search</a>
+
+  </div>
+
 </div>
 
 <div class="container">
