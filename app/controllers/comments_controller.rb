@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
 
   def new
-    @comment = Comment.new(picture_id: params[:picture_id])
+    @comment = Comment.new
   end
 
   def create
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:text, :name)
   end
 
   def find_picture

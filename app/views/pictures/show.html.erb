@@ -2,33 +2,36 @@
 
 	<div class="col-md-4">
 
-		  <%= image_tag @picture.pic_img.url(:pic_show), class: "picture-show" %>
+		<%= image_tag @picture.pic_img.url(:pic_show), class: "picture-show" %>
 
 	</div>
 
 	<div class="col-md-8">
 
-		<div class="picture-info">
+		<div class="book-info">
 
-			<h2 class="picture-title"><%= @picture.title %></h2>
+      <h2 class="picture-title"><%= @picture.title %></h2>
       <p class="picture-desc"><%= @picture.url %></p>
       <h3>comments</h3>
-			<span class="number-of-comments"><%= @picture.comments.count %> comments</span>
-      
+      <span class="number-of-comments"><%= @picture.comments.count %> comments</span>
+      <%= render 'comments/comment' %>
 
 		</div>
 	</div>
 
-</div>
-
-		<% if @picture.user_id == current_user.id %>
-    <%= link_to "Add comment", new_picture_comment_path(@picture), class: "btn btn-custom" %>
-			<%= link_to "Edit", edit_picture_path(@picture), class: "btn btn-custom" %>
-			<%= link_to "Delete", picture_path(@picture), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
-
-		<% end %>
 
 </div>
-<%= link_to "Back", root_path, class: "btn btn-custom" %>
 
-<p id="notice"><%= notice %></p>
+
+
+
+  <% if @picture.user_id == current_user.id %>
+    <%= link_to "Edit", edit_picture_path(@picture), class: "btn btn-custom" %>
+    <%= link_to "Delete", picture_path(@picture), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+
+  <% end %>
+
+  <%= link_to "Add comment", new_picture_comment_path(@picture), class: "btn btn-custom" %>
+  <%= link_to "Back", root_path, class: "btn btn-custom" %>
+
+</div>
