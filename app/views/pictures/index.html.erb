@@ -8,7 +8,12 @@ Search stuff!
 
  <div class="city-pics">
    <% @flickrsearch.sample(12).each do |f| %>
-   <div class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></div>
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <%= link_to f, rel: "shadowbox" do %>
+       <%= image_tag f %>
+    <% end %>
+   </div>
+
    <% end %>
  </div>
 
