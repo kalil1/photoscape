@@ -4,12 +4,12 @@
   <p>Search FOTOSCAPE for your favorite city or discover somewhere new!</p>
 
   <div class="citySearch">
-    <input value="Explore A City" id="find_city" type="text" class="validate">
+    <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
 
-    <!-- Dropdown Trigger -->
+
     <a class='dropdown-button btn' href='#' data-activates='category'>Category<i class="material-icons">arrow_drop_down</i></a>
 
-    <!-- Dropdown Structure -->
+
     <ul id='category' class='dropdown-content'>
       <li><a href="#!">Landmarks</a></li>
       <li><a href="#!">Skyline</a></li>
@@ -21,6 +21,16 @@
     <a class="btn">Search</a>
 
   </div>
+
+  <!-- <div class="citySearch test">
+
+    <%= form_tag("/search", method: "get") do %>
+     <%= label_tag(:q, "Search for:") %>
+     <%= text_field_tag(:q) %>
+     <%= submit_tag("Search") %>
+   <% end %>
+
+  </div> -->
 
 </div>
 
