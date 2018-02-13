@@ -1,47 +1,47 @@
 <div class="search">
-Search stuff!
+  <h1>You know you're in <span><%= @cityQuery %></span> when...</h1>
+  <p>...you take in the familiar landmarks, cuisine, teams and skyline.</p>
+  <p>Search for your favorite city or discover somewhere new!</p>
+  
 </div>
 
 <div class="container">
-
-
-
- <div class="city-pics">
-   <% @flickrsearch.sample(12).each do |f| %>
-   <div class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></div>
-   <% end %>
- </div>
+  <div class="city-pics">
+    <% @flickrsearch.sample(12).each do |f| %>
+    <div class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></div>
+    <% end %>
+  </div>
 
 </div>
 
 
 <div class="todo">
- <div class="container">
-   <h2>Top Attractions</h2>
+  <div class="container">
+    <h2>Top Attractions</h2>
 
-   <div class="attractions">
+    <div class="attractions">
 
-     <p>
-       <%= @venue_one %><br>
-       <img src ="<%= @image_one %>">
-     </p>
+      <p>
+        <%= @venue_one %><br>
+        <img src ="<%= @image_one %>">
+      </p>
 
-     <p>
-       <%= @venue_two %><br>
-       <img src ="<%= @image_two %>">
-     </p>
+      <p>
+        <%= @venue_two %><br>
+        <img src ="<%= @image_two %>">
+      </p>
 
-   </div>
- </div>
+    </div>
+  </div>
 
 </div>
 
 <!-- <div class="user-pics">
-  <% @pictures.each do |picture| %>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <a href="/pictures/<%= picture.id %>">
-      <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-      <% end %>
-    </a>
-  </div>
+<% @pictures.each do |picture| %>
+<div class="col-md-4 col-sm-6 col-xs-12">
+<a href="/pictures/<%= picture.id %>">
+<%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+<% end %>
+</a>
+</div>
 </div> -->

@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all.order("created_at DESC")
 
-    @cityQuery = "Nashville, TN"
+    @cityQuery = "Minneapolis, MN"
     cat = "landmarks"
 
     @citySelect = @cityQuery.split(",")[0]

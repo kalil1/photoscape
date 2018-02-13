@@ -21,12 +21,21 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f3f3f2;
-  font-family: Raleway, sans-serif;
+}
+
+body, p, ol, ul, td {
+  font-family: "Raleway", verdana, arial, helvetica, sans-serif;
+}
+
+h1 {
+  color: #fff;
+  font-size: 1.7em;
 }
 
 h2 {
-  font-family: "Abril Fatface", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 3em;
+  font-weight: 700;
 }
 
 .container {
@@ -55,6 +64,7 @@ h2 {
 
 .btn, .btn:hover {
   box-shadow: none;
+  font-weight: 700;
 }
 
 .btn.primary, .btn.primary:active, .btn.primary:visited {
@@ -78,9 +88,35 @@ h2 {
 }
 
 
-// .btn .primary, .btn .primary:hover, .btn:active, .btn:visited {
-//     background-color: #8064A2;
-// }
+// SEARCH
+.search {
+  background-color: #803c81;
+  padding: 50px 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search span {
+  font-size: 1.4em;
+  text-decoration: underline;
+}
+
+.search p {
+  color: white;
+  font-size: 1.4em;
+}
+
+// Search bar
+.input-group {
+  width: 50%;
+  margin: 0 auto;
+}
+input:not([type]) {
+  background-color: #fff;
+  height: 2.4rem;
+  padding: 0 10px;
+  font-size: 2em;
+}
 
 .city-pics img {
   object-fit: cover;
@@ -100,6 +136,8 @@ body > h3 {
   font-family: 'Anton', sans-serif;
 }
 
+// TOP ATTRACTIONS
+
 .todo {
   background-color: #f78528;
   background-size: cover;
@@ -112,15 +150,37 @@ body > h3 {
 .attractions {
   display: flex;
   justify-content: space-around;
+  text-align: center;
+}
+
+.attractions p {
+  font-size: 1.4em;
+  font-weight: 700;
+  /* margin-bottom: 10px; */
 }
 
 .attractions img {
   width: 300px;
   padding:8px;
+  margin: 8px 0 20px;
+  background-color: #fff;
+  border: 2px solid #d06005;
 }
 
-footer a {
-font-family: verdana, arial, helvetica, sans-serif;
-font-size: 13px;
-line-height: 18px;
+// FOOTER
+
+footer {
+  background-color: #e7486b;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 0;
 }
