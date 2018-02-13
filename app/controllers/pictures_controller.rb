@@ -4,48 +4,11 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all.order("created_at DESC")
-    # # Start of Flickr API
-    # flickr = Flickr.new('3d403357fbd5a290f43a9b6cd0216a4a')
-    #
-    # @recentphotos = flickr.photos
-    #
-    # @first = @recentphotos.first.url
-    # # End of Flickr API
 
-    # Start of Flickraw API
-    FlickRaw.api_key="3d403357fbd5a290f43a9b6cd0216a4a"
-    FlickRaw.shared_secret="7ea1e588cac6c790"
-    #
-    # @first = flickr.places.find(:query => 'miami')
-    #
-    # # info = flickr.places.find(:query => 'miami')
-    # # @flickinfo = FlickRaw.url(info)
-    #
-    # new_b = flickr.places.find :query => "new brunswick"
-    # latitude = new_b[0]['latitude'].to_f
-    # longitude = new_b[0]['longitude'].to_f
-
-    # # within 60 miles of new brunswick, let's use a bbox
-    # radius = 1
-    args = {:tags => 'miami graffiti'}
-    # args[:bbox] = "#{longitude - radius},#{latitude - radius},#{longitude + radius},#{latitude + radius}"
-    #
-    # # requires a limiting factor, so let's give it one
-    # args[:min_taken_date] = '1890-01-01 00:00:00'
-    # args[:max_taken_date] = '1920-01-01 00:00:00'
-    # args[:accuracy] = 1 # the default is street only granularity [16], which most images aren't...
-
-    @flickrsearch = []
-
-    discovered_pictures = flickr.photos.search args
-    discovered_pictures.each{|p| url = FlickRaw.url p; @flickrsearch << url}
-
-    # @flickrpics = @flickrsearch.map {|f| "<img src='#{f}'>"}
-
-    @cityQuery = "Seattle, WA"
+    @cityQuery = "Nashville, TN"
     cat = "landmarks"
 
-    # End of Flickraw API
+    @citySelect = @cityQuery.split(",")[0]
 
     # Start of destination scrape
     destUrl = "http://www.10best.com/destinations/all/"
@@ -70,9 +33,11 @@ class PicturesController < ApplicationController
     end
     # End of destination scrape
 
+    @cityIndex = @cities.index(@cityQuery)
+
     # Start of attractions scrape
-    attrUrl = "http://www.10best.com/destinations/new-mexico/albuquerque/attractions/best-attractions-activities/"
-    attrResponse = HTTParty.get(attrUrl)
+    @attrUrl = @links[@cityIndex] + "attractions/best-attractions-activities/"
+    attrResponse = HTTParty.get(@attrUrl)
 
     #String => Nokgiri::HTML => DocumentObjectModel (DOM)
     attrDom = Nokogiri::HTML(attrResponse.body)
@@ -106,10 +71,22 @@ class PicturesController < ApplicationController
     @image_two = @image[@index_two]
     # End of attractions scrape
 
+    # # Start of Flickr API
+    FlickRaw.api_key="3d403357fbd5a290f43a9b6cd0216a4a"
+    FlickRaw.shared_secret="7ea1e588cac6c790"
+
+    args = {:tags => "#{@citySelect} #{cat}"}
+
+    @flickrsearch = []
+
+    discovered_pictures = flickr.photos.search args
+    discovered_pictures.each{|p| url = FlickRaw.url p; @flickrsearch << url}
+
+    # @flickrpics = @flickrsearch.map {|f| "<img src='#{f}'>"}
+
+    # End of Flickraw API
+
   end
-
-
-
 
   def show
   end
