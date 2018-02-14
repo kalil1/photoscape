@@ -6,34 +6,20 @@
   <div class="citySearch">
 
     <%= form_tag pictures_citysearch_path do %>
-<%=label_tag 'cityname' %>
-<%=text_field_tag 'cityname'%>
+    <%=text_field_tag 'cityname'%>
 
-<%= select_tag "category", options_for_select([ "Landmarks", "Skyline", "Food", "Neighborhoods", "Sports" ]) %>
+    <%= select_tag "category", options_for_select([ "Landmarks", "Skyline", "Food", "Neighborhoods", "Sports" ]),({:class => 'citysearch btn'}) %>
 
-<div><%= submit_tag 'Save' %></div>
-<% end %>
-
-<%= @tryit %>
-    <!-- <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
-
-
-
-
-    <a class='dropdown-button btn' href='#' data-activates='category'>Category<i class="material-icons">arrow_drop_down</i></a>
-
-
-    <ul id='category' class='dropdown-content'>
-      <li><a href="#!">Landmarks</a></li>
-      <li><a href="#!">Skyline</a></li>
-      <li><a href="#!">Cuisine</a></li>
-      <li><a href="#!">Neighborhoods</a></li>
-      <li><a href="#!">Weather</a></li>
-    </ul>
-
-    <a class="btn">Search</a> -->
+    <div><%= submit_tag 'Search',({:class => 'citysearch btn'}) %></div>
+    <% end %>
 
   </div>
+
+  <!-- <div class="discover"> <a href="#">Discover somewhere new!</a>
+    <%= link_to "Home" do %>
+    <% session.clear %>
+    <% end %>
+  </div> -->
 
 </div>
 
@@ -41,16 +27,16 @@
 
 
 
- <div class="city-pics">
-   <% @flickrsearch.sample(12).each do |f| %>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <%= link_to f, rel: "shadowbox[pic]", class: 'pic' do %>
-       <%= image_tag f %>
-    <% end %>
-   </div>
+  <div class="city-pics">
+    <% @flickrsearch.sample(12).each do |f| %>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <%= link_to f, rel: "shadowbox[pic]", class: 'pic' do %>
+      <%= image_tag f %>
+      <% end %>
+    </div>
 
-   <% end %>
- </div>
+    <% end %>
+  </div>
 
 </div>
 
