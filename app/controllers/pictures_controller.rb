@@ -8,14 +8,6 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all.order("created_at DESC")
 
-      @tryit = @@citySearch
-      @trythis = @@cityCat
-
-    @cityQuery = "Miami, FL"
-    cat = "skyline"
-
-    @citySelect = @cityQuery.split(",")[0]
-
     # Start of destination scrape
     destUrl = "http://www.10best.com/destinations/all/"
 
@@ -38,6 +30,22 @@ class PicturesController < ApplicationController
       @links << 'http://www.10best.com' + link['href']
     end
     # End of destination scrape
+
+    @cityQuery = @cities.sample
+    cat = "skyline"
+
+    if @cities.include? @@citySearch
+      @cityQuery = @@citySearch
+      cat = @@cityCat
+      @tryit = @@cityCat
+    else
+      @tryit = "NOpe!"
+    end
+
+
+
+
+    @citySelect = @cityQuery.split(",")[0]
 
     @cityIndex = @cities.index(@cityQuery)
 
@@ -97,6 +105,7 @@ class PicturesController < ApplicationController
   def citysearch
     @@citySearch = params["cityname"]
     @@cityCat = params["category"]
+    redirect_to :action => 'index'
   end
 
   def show

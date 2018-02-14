@@ -9,13 +9,12 @@
 <%=label_tag 'cityname' %>
 <%=text_field_tag 'cityname'%>
 
-<%= select_tag "category", options_for_select([ "Landmarks", "Skyline", "Cuisine", "Neighborhoods", "Weather" ]) %>
+<%= select_tag "category", options_for_select([ "Landmarks", "Skyline", "Food", "Neighborhoods", "Sports" ]) %>
 
 <div><%= submit_tag 'Save' %></div>
 <% end %>
 
 <%= @tryit %>
-<%= @trythis %>
     <!-- <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
 
 
