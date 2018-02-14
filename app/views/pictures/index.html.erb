@@ -52,38 +52,33 @@
   <p>Search FOTOSCAPE for your favorite city or discover somewhere new!</p>
 
   <div class="citySearch">
-    <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
 
+    <%= form_tag pictures_citysearch_path do %>
+    <%=text_field_tag 'cityname'%>
 
-    <a class='dropdown-button btn' href='#' data-activates='category'>Category<i class="material-icons">arrow_drop_down</i></a>
+    <%= select_tag "category", options_for_select([ "Landmarks", "Skyline", "Food", "Neighborhoods", "Sports" ]),({:class => 'citysearch btn'}) %>
 
-
-    <ul id='category' class='dropdown-content'>
-      <li><a href="#!">Landmarks</a></li>
-      <li><a href="#!">Skyline</a></li>
-      <li><a href="#!">Cuisine</a></li>
-      <li><a href="#!">Neighborhoods</a></li>
-      <li><a href="#!">Weather</a></li>
-    </ul>
-
-    <a class="btn">Search</a>
+    <div><%= submit_tag 'Search',({:class => 'citysearch btn'}) %></div>
+    <% end %>
 
   </div>
+
 </div>
 
 <div class="container">
 
- <div class="city-pics">
-   <% @flickrsearch.sample(12).each do |f| %>
-   <a class="col-md-4 col-sm-6 col-xs-12"><%= image_tag f %></a>
-   <% end %>
-   <% @pictures.each do |picture| %>
-     <a class="col-md-4 col-sm-6 col-xs-12" href="/pictures/<%= picture.id %>">
-       <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-     </a>
 
-   <% end %>
- </div>
+
+  <div class="city-pics">
+    <% @flickrsearch.sample(12).each do |f| %>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <%= link_to f, rel: "shadowbox[pic]", class: 'pic' do %>
+      <%= image_tag f %>
+      <% end %>
+    </div>
+
+    <% end %>
+  </div>
 
 </div>
 

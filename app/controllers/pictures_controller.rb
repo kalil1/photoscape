@@ -2,8 +2,8 @@ class PicturesController < ApplicationController
   before_action :find_picture, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
 
-
-
+  @@citySearch = true
+  @@cityCat = true
 
   def index
     @pictures = Picture.all.order("created_at DESC")
@@ -43,13 +43,6 @@ class PicturesController < ApplicationController
     discovered_pictures = flickr.photos.search args
     discovered_pictures.each{|p| url = FlickRaw.url p; @flickrsearch << url}
 
-    # @flickrpics = @flickrsearch.map {|f| "<img src='#{f}'>"}
-
-    @cityQuery = "Seattle, WA"
-    cat = "landmarks"
-
-    # End of Flickraw API
-
     # Start of destination scrape
     destUrl = "http://www.10best.com/destinations/all/"
 
@@ -72,6 +65,25 @@ class PicturesController < ApplicationController
       @links << 'http://www.10best.com' + link['href']
     end
     # End of destination scrape
+
+
+    @cityQuery = @cities.sample
+    cat = "skyline"
+
+    if @cities.include? @@citySearch
+      @cityQuery = @@citySearch
+      cat = @@cityCat
+      @tryit = @@cityCat
+    else
+      @tryit = "NOpe!"
+    end
+
+
+
+
+    @citySelect = @cityQuery.split(",")[0]
+
+    @cityIndex = @cities.index(@cityQuery)
 
     # Start of attractions scrape
     attrUrl = "http://www.10best.com/destinations/new-mexico/albuquerque/attractions/best-attractions-activities/"
@@ -220,6 +232,11 @@ class PicturesController < ApplicationController
 
 @comments = Comment.all
 
+  def citysearch
+    @@citySearch = params["cityname"]
+    @@cityCat = params["category"]
+    redirect_to :action => 'index'
+  end
 
   end
 

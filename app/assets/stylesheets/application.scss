@@ -118,10 +118,29 @@ a:hover{
   font-size: 1.4em;
 }
 
+// Search fields
+
 .citySearch {
-  display: flex;
   width: 50%;
   margin: 50px auto 0;
+}
+
+#category {
+  width: 230px;
+}
+
+.discover a {
+    color: white;
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+
+.citySearch form {
+    display: flex;
+}
+
+select {
+  display: block;
 }
 
 input[type=text].valid:not(.browser-default) {
@@ -153,13 +172,14 @@ input:not([type]), input[type=text]:not(.browser-default) {
   color: #fff;
 }
 
-.dropdown-content li>a, .dropdown-content li>span, .citySearch li>a:visited {
+#category option {
+  background-color: #fff;
   text-decoration: none;
   color: #686868;
 }
 
-.dropdown-content li>a:hover {
-  background-color: #26a69a;
+.citySearch option:hover {
+  background-color: #6dc1c3;
   color: #fff;
 }
 
