@@ -4,7 +4,21 @@
   <p>Search FOTOSCAPE for your favorite city or discover somewhere new!</p>
 
   <div class="citySearch">
-    <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
+
+    <%= form_tag pictures_citysearch_path do %>
+<%=label_tag 'cityname' %>
+<%=text_field_tag 'cityname'%>
+
+<%= select_tag "category", options_for_select([ "Landmarks", "Skyline", "Cuisine", "Neighborhoods", "Weather" ]) %>
+
+<div><%= submit_tag 'Save' %></div>
+<% end %>
+
+<%= @tryit %>
+<%= @trythis %>
+    <!-- <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
+
+
 
 
     <a class='dropdown-button btn' href='#' data-activates='category'>Category<i class="material-icons">arrow_drop_down</i></a>
@@ -18,19 +32,9 @@
       <li><a href="#!">Weather</a></li>
     </ul>
 
-    <a class="btn">Search</a>
+    <a class="btn">Search</a> -->
 
   </div>
-
-  <!-- <div class="citySearch test">
-
-    <%= form_tag("/search", method: "get") do %>
-     <%= label_tag(:q, "Search for:") %>
-     <%= text_field_tag(:q) %>
-     <%= submit_tag("Search") %>
-   <% end %>
-
-  </div> -->
 
 </div>
 

@@ -2,8 +2,14 @@ class PicturesController < ApplicationController
   before_action :find_picture, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
 
+  @@citySearch = true
+  @@cityCat = true
+
   def index
     @pictures = Picture.all.order("created_at DESC")
+
+      @tryit = @@citySearch
+      @trythis = @@cityCat
 
     @cityQuery = "Miami, FL"
     cat = "skyline"
@@ -88,8 +94,9 @@ class PicturesController < ApplicationController
 
   end
 
-  def search
-    @products = Product.find_by_name(params["SearchInput"])
+  def citysearch
+    @@citySearch = params["cityname"]
+    @@cityCat = params["category"]
   end
 
   def show
