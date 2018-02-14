@@ -1,5 +1,37 @@
 <div class="search">
-Search stuff!
+  <h1>You know you're in <span><%= @cityQuery %></span> when...</h1>
+  <p>...you experience its distinct landmarks, cuisine and skyline.</p>
+  <p>Search FOTOSCAPE for your favorite city or discover somewhere new!</p>
+
+  <div class="citySearch">
+    <input value="Explore A City" id="find_city" type="text" class="validate" name="select[city]">
+
+
+    <a class='dropdown-button btn' href='#' data-activates='category'>Category<i class="material-icons">arrow_drop_down</i></a>
+
+
+    <ul id='category' class='dropdown-content'>
+      <li><a href="#!">Landmarks</a></li>
+      <li><a href="#!">Skyline</a></li>
+      <li><a href="#!">Cuisine</a></li>
+      <li><a href="#!">Neighborhoods</a></li>
+      <li><a href="#!">Weather</a></li>
+    </ul>
+
+    <a class="btn">Search</a>
+
+  </div>
+
+  <!-- <div class="citySearch test">
+
+    <%= form_tag("/search", method: "get") do %>
+     <%= label_tag(:q, "Search for:") %>
+     <%= text_field_tag(:q) %>
+     <%= submit_tag("Search") %>
+   <% end %>
+
+  </div> -->
+
 </div>
 
 <div class="container">
@@ -21,32 +53,32 @@ Search stuff!
 
 
 <div class="todo">
- <div class="container">
-   <h2>Top Attractions</h2>
+  <div class="container">
+    <h2>Top Attractions</h2>
 
-   <div class="attractions">
+    <div class="attractions">
 
-     <p>
-       <%= @venue_one %><br>
-       <img src ="<%= @image_one %>">
-     </p>
+      <p>
+        <%= @venue_one %><br>
+        <img src ="<%= @image_one %>">
+      </p>
 
-     <p>
-       <%= @venue_two %><br>
-       <img src ="<%= @image_two %>">
-     </p>
+      <p>
+        <%= @venue_two %><br>
+        <img src ="<%= @image_two %>">
+      </p>
 
-   </div>
- </div>
+    </div>
+  </div>
 
 </div>
 
 <!-- <div class="user-pics">
-  <% @pictures.each do |picture| %>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <a href="/pictures/<%= picture.id %>">
-      <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-      <% end %>
-    </a>
-  </div>
+<% @pictures.each do |picture| %>
+<div class="col-md-4 col-sm-6 col-xs-12">
+<a href="/pictures/<%= picture.id %>">
+<%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+<% end %>
+</a>
+</div>
 </div> -->

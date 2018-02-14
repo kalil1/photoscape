@@ -5,8 +5,8 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all.order("created_at DESC")
 
-    @cityQuery = "Nashville, TN"
-    cat = "landmarks"
+    @cityQuery = "Miami, FL"
+    cat = "skyline"
 
     @citySelect = @cityQuery.split(",")[0]
 
@@ -88,6 +88,10 @@ class PicturesController < ApplicationController
 
   end
 
+  def search
+    @products = Product.find_by_name(params["SearchInput"])
+  end
+
   def show
   end
 
@@ -115,6 +119,7 @@ class PicturesController < ApplicationController
     else
       render 'edit'
     end
+
   end
 
   def destroy
