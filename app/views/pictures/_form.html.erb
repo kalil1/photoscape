@@ -1,6 +1,5 @@
   <%= simple_form_for @picture, :html => { :multipart => true } do |f| %>
   	<%= f.file_field :pic_img %>
-<%= f.input :location_id, collection: ["Helvetica Arial, sans-serif", "Georgia, Times, serif"] %>
   	<%= f.input :title, label: "Title" %>
   	<%= f.input :url, label: "Caption" %>
   	<%= f.button :submit, :class => 'btn btn-info' %>

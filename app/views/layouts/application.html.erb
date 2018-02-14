@@ -4,22 +4,17 @@
   <title>FOTOSCAPE</title>
 
   <!-- Compiled and minified Bootstrap-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!--Compiled and minified Font Awesome-->
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!--Import Google Icon Font(Monoton)-->
+  <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway:400,700|Abril+Fatface|Material+Icons" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway:400,700|Abril+Fatface" rel="stylesheet">
-
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -28,11 +23,17 @@
 
     Shadowbox.init();
   </script>
+<style media="screen">
+.row {
 
+}
+</style>
 
 
 </head>
-<body>
+
+
+<body class="row">
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -66,16 +67,18 @@
     <footer>
       <div class="container">
         <div class="copy">
-          <p>Copyright &copy;2018 Attila, Davidson, Williams</p>
+          <p>Copyright &copy;2018 <br>
+            Collaborators: J.Attila, C.Davidson, A.Williams</p>
         </div>
         <div class="attr">
-          <p>Top Attractions via www.10best.com | City photos via Flickr</p>
+          <p>Attributions:<br>
+            Top Attractions via www.10best.com | City photos via Flickr</p>
         </div>
       </div>
   </footer>
 
     <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
   </body>
 </html>

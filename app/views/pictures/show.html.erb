@@ -1,8 +1,9 @@
+
 <div class="row">
 
 	<div class="col-md-4">
 
-		<%= image_tag @picture.pic_img.url(:pic_show), class: "picture-show" %>
+		<span class="city-pics"> <%= image_tag @picture.pic_img.url(:pic_show), class: "picture-show" %></span>
 
 	</div>
 
@@ -10,11 +11,9 @@
 
 		<div class="book-info">
 
-      <h2 class="picture-title"><%= @picture.title %></h2>
-      <p class="picture-desc"><%= @picture.url %></p>
-      <h3>comments</h3>
-      <span class="number-of-comments"><%= @picture.comments.count %> comments</span>
-      <%= render 'comments/comment' %>
+			<h2 class="book-title"><%= @picture.title %></h2>
+			<span class="number-of-reviews"><%= @picture.comments.count %> comments</span>
+			<p class="book-desc"><%= @picture.url %></p>
 
 		</div>
 	</div>
@@ -22,16 +21,39 @@
 
 </div>
 
+<div class="row">
 
+	<div class="col-md-4">
 
+		<div class="reviews">
 
-  <% if @picture.user_id == current_user.id %>
-    <%= link_to "Edit", edit_picture_path(@picture), class: "btn btn-custom" %>
-    <%= link_to "Delete", picture_path(@picture), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+			<!-- Where the reviews/ratings will go -->
+			<h1>Comments</h1>
+			<%= render @picture.comments %>
 
-  <% end %>
+			<div>
+				<%= link_to "Add Review", new_picture_comment_path(@picture), class: "btn-custom" %>
+			</div>
 
-  <%= link_to "Add comment", new_picture_comment_path(@picture), class: "btn btn-custom" %>
-  <%= link_to "Back", root_path, class: "btn btn-custom" %>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="links btn-group">
+
+	<%= link_to "Back", root_path, class: "btn btn-custom" %>
+
+	<% if user_signed_in? %>
+
+		<% if @picture.user_id == current_user.id %>
+
+			<%= link_to "Edit", edit_picture_path(@picture), class: "btn btn-custom" %>
+			<%= link_to "Delete", picture_path(@picture), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+
+		<% end %>
+
+	<% end %>
 
 </div>
