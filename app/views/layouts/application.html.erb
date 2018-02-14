@@ -16,25 +16,17 @@
 
   <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+  <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
   <script type="text/javascript">
-
-
-    Shadowbox.init();
+    Shadowbox.init({
+      continuous: true
+    });
   </script>
-<style media="screen">
-.row {
-
-}
-</style>
-
-
 </head>
 
-
-<body class="row">
-
+<body>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
 
@@ -54,8 +46,7 @@
             <% end %>
           </div>
         </ul>
-      </div>
-
+        <div>
     </div>
   </nav>
 
@@ -65,7 +56,7 @@
     <%= yield %>
 
     <footer>
-      <div class="container">
+      <div class="container footer">
         <div class="copy">
           <p>Copyright &copy;2018 <br>
             Collaborators: J.Attila, C.Davidson, A.Williams</p>
