@@ -62,6 +62,7 @@
     <% end %>
 
   </div>
+</div>
 
 </div>
 
@@ -71,16 +72,15 @@
 
   <div class="city-pics">
     <% @flickrsearch.sample(12).each do |f| %>
-     <%= link_to f, rel: "shadowbox[pic]", class: 'pic' do %>
+       <%= link_to f, rel: "shadowbox[pic]", class: 'pic' do %>
       <a class="col-md-4 col-sm-6 col-xs-12" href="#"><%= image_tag f %></a>
       <% end %>
       <% end %>
       <% @pictures.each do |picture| %>
-     <a class="col-md-4 col-sm-6 col-xs-12" href="/pictures/<%= picture.id %>">
-    <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
-     </a>
-     <% end %>
-
+        <a class="col-md-4 col-sm-6 col-xs-12" href="/pictures/<%= picture.id %>">
+          <%= image_tag picture.pic_img.url(:pic_index), class: "book" %>
+        </a>
+        <% end %>
 
   </div>
 
