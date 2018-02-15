@@ -44,16 +44,6 @@ a:hover{
   color: black;
 }
 
-.container {
-  background-image: url('https://wallpaperscraft.com/catalog/city/1920x1080');
-  width: 90%;
-
-}
-.container2 {
-  background-image: url('https://wallpaperscraft.com/catalog/city/1920x1080');
-  width: 40%;
-
-}
 .navbar {
   padding: 1em;
 }
@@ -98,7 +88,10 @@ a:hover{
 .navbar .btn {
   color: white;
 }
-
+// LOGIN
+.alert {
+    padding: 0;
+  }
 
 // SEARCH
 .search {
@@ -187,7 +180,7 @@ input:not([type]), input[type=text]:not(.browser-default) {
   font-size: 37px;
 }
 
-//Flicr City Pics
+//Flickr City Pics
 
 .city-pics img {
   object-fit: cover;
@@ -255,6 +248,22 @@ footer p {
   font-size: 1.2em;
   padding: 10px 0;
 }
+
+// Materialize is weird
+
+@media only screen and (min-width: 993px) {
+  .container {
+      width: 90%;
+  }
+}
+
+
+@media only screen and (min-width: 601px) {
+  .container {
+      width: 90%;
+  }
+}
+
 
 
 #sb-title-inner,#sb-info-inner,#sb-loading-inner,div.sb-message{font-family:"HelveticaNeue-Light","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:200;color:#fff;}

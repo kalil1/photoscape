@@ -1,3 +1,4 @@
+<div class="container show">
 
 <div class="row">
 
@@ -17,27 +18,9 @@
 			<h1>Comments</h1>
 			<%= render @picture.comments %>
 
-
 		</div>
 	</div>
 
-
-</div>
-
-<div class="row">
-
-	<div class="col-md-4">
-
-		<div class="reviews">
-
-
-			<div>
-				<%= link_to "Add Review", new_picture_comment_path(@picture), class: "btn-custom" %>
-			</div>
-
-		</div>
-
-	</div>
 
 </div>
 
@@ -56,4 +39,7 @@
 
 	<% end %>
 
+  <%= link_to "Add Comment", new_picture_comment_path(@picture), class: "btn-custom btn primary" %>
+
+</div>
 </div>
