@@ -1,3 +1,4 @@
+<div class="container">
 
 <div class="row">
 
@@ -12,8 +13,11 @@
 		<div class="book-info">
 
 			<h2 class="book-title"><%= @picture.title %></h2>
-			<span class="number-of-reviews"><%= @picture.comments.count %> comments</span>
 			<p class="book-desc"><%= @picture.url %></p>
+			<span class="number-of-reviews"><%= @picture.comments.count %> comments</span>
+			<h1>Comments</h1>
+			<%= render @picture.comments %>
+			<%= link_to "Add Review", new_picture_comment_path(@picture), class: "btn btn-custom" %>
 
 		</div>
 	</div>
@@ -28,11 +32,8 @@
 		<div class="reviews">
 
 			<!-- Where the reviews/ratings will go -->
-			<h1>Comments</h1>
-			<%= render @picture.comments %>
 
 			<div>
-				<%= link_to "Add Review", new_picture_comment_path(@picture), class: "btn-custom" %>
 			</div>
 
 		</div>
@@ -55,5 +56,7 @@
 		<% end %>
 
 	<% end %>
+
+</div>
 
 </div>
