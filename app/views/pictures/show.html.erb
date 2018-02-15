@@ -1,5 +1,7 @@
 <div class="container show">
 
+<h1>Gallery</h1>
+
 <div class="row">
 
 	<div class="col-md-4">
@@ -13,8 +15,8 @@
 		<div class="book-info">
 
 			<h2 class="book-title"><%= @picture.title %></h2>
-			<span class="number-of-reviews"><%= @picture.comments.count %> comments</span>
 			<p class="book-desc"><%= @picture.url %></p>
+			<span class="number-of-reviews"><%= @picture.comments.count %> comments</span>
 			<h1>Comments</h1>
 			<%= render @picture.comments %>
 
@@ -42,4 +44,6 @@
   <%= link_to "Add Comment", new_picture_comment_path(@picture), class: "btn-custom btn primary" %>
 
 </div>
+</div>
+
 </div>

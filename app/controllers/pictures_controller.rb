@@ -249,7 +249,7 @@ end
   private
 
   def picture_params
-    params.require(:picture).permit(:title, :description, :author, :pic_img)
+    params.require(:picture).permit(:title, :url, :author, :pic_img)
   end
 
   def find_picture
