@@ -1,24 +1,25 @@
-# README
+# FOTOSCAPE
+FOTOSCAPE is a collaboration between Candice Davidson and Kalil Williams for our Wyncode Midterm Project.  Discover many cities from all over the world through photos. You may also create an account and include photos of your own.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Project Details
 
-* System dependencies
+![FOTOSCAPE](https://github.com/cndragn/fotoscape/app/assets/images/fotoscape.png)
 
-* Configuration
+## Features
+* Search for a city and select a category to view photos.
+* Register for an account.
+* Upload photos to include in city database for others to view.
 
-* Database creation
+## Technologies Used
 
-* Database initialization
+* Ruby
+* Ruby on Rails
+* Flickr API
+* HTML / CSS
+* Devise Authenticated Login
+* Materialize
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Acknowledgements
+Photos: Flickr API
