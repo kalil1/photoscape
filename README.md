@@ -9,6 +9,7 @@ FOTOSCAPE is a collaboration between Candice Davidson and Kalil Williams for our
 
 ## Features
 * Search for a city and select a category to view photos.
+* View random top attractions for the current city.
 * Register for an account.
 * Upload photos to include in city database for others to view.
 
