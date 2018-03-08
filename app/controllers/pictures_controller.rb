@@ -38,8 +38,6 @@ class PicturesController < ApplicationController
       @cityQuery = @@citySearch
       cat = @@cityCat
       @tryit = @@cityCat
-    else
-      @tryit = "NOpe!"
     end
 
 
