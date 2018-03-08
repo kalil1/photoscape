@@ -17,9 +17,11 @@ FOTOSCAPE is a collaboration between Candice Davidson and Kalil Williams for our
 * Ruby
 * Ruby on Rails
 * Flickr API
+* Web Scraping
 * HTML / CSS
 * Devise Authenticated Login
 * Materialize
 
 ## Acknowledgements
 Photos: Flickr API
+Top Attractions: 10best.com
