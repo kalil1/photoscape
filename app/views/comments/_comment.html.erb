@@ -1,7 +1,7 @@
 
 <% @picture.comments.each do |comment| %>
 
-  <p><%= comment.name %></p>
-  <p><%= comment.text %></p>
+  <p><span><%= comment.name %>:</span><br>
+  <%= comment.text %></p>
 
     <% end %>
