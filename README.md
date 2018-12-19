@@ -5,7 +5,7 @@ Photoscape is a collaboration between Candice Davidson and Kalil Williams for ou
 
 ## Project Photos & Details
 
-![Photoscape](https://github.com/cndragn/Photoscape/blob/master/app/assets/images/Photoscape.png)
+![Photoscape](https://github.com/cndragn/fotoscape/blob/master/app/assets/images/Photoscape.png)
 ![Photoscape](https://github.com/kalil1/photoscape/blob/master/app/assets/images/form.png)
 ![Photoscape](https://github.com/kalil1/photoscape/blob/master/app/assets/images/uploaded.png)
 
