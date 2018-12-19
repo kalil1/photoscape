@@ -9,6 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
+gem 'httparty'
 # Use sqlite3 as the database for Active Record in Development
 gem 'sqlite3', group: :development
 
@@ -68,7 +69,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'materialize-sass'
   gem 'nokogiri'
-  gem 'httparty'
   gem 'flickraw'
 end
 
