@@ -51,6 +51,10 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'shadowbox-rails'
 
 group :development do
