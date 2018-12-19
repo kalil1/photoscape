@@ -68,8 +68,8 @@ class PicturesController < ApplicationController
     @venue_two = @venues[1]
 
     # Index of random photo to grab correct picture
-    @index_one = @venue.index(@venue_one)
-    @index_two = @venue.index(@venue_two)
+    @one = @venue.index(@venue_one)
+    @two = @venue.index(@venue_two)
 
     images = attrDom.css('img.lazy')
 
@@ -79,8 +79,8 @@ class PicturesController < ApplicationController
     end
 
     # Select image link based on index of random photo
-    @image_one = @image[@index_one]
-    @image_two = @image[@index_two]
+    @image_one = @image[@one]
+    @image_two = @image[@two]
     # End of attractions scrape
 
     # # Start of Flickr API
