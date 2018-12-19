@@ -6,8 +6,8 @@ FOTOSCAPE is a collaboration between Candice Davidson and Kalil Williams for our
 ## Project Photos & Details
 
 ![FOTOSCAPE](https://github.com/cndragn/fotoscape/blob/master/app/assets/images/fotoscape.png)
-![FOTOSCAPE](https://github.com/cndragn/fotoscape/blob/master/app/assets/images/form.png)
-![FOTOSCAPE](https://github.com/cndragn/fotoscape/blob/master/app/assets/images/uploaded.png)
+![FOTOSCAPE](https://github.com/kalil1/photoscape/blob/master/app/assets/images/form.png)
+![FOTOSCAPE](https://github.com/kalil1/photoscape/blob/master/app/assets/images/uploaded.png)
 
 ## Features
 * Search for a city and select a category to view photos.
