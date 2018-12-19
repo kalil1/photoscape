@@ -248,11 +248,3 @@ footer p {
   font-size: 1.2em;
   padding: 10px 0;
 }
-
-// Materialize is weird
-
-@media only screen and (min-width: 993px) {
-  .container {
-      width: 90%;
-  }
-}
