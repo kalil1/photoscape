@@ -25,6 +25,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+gem 'materialize-sass'
+gem 'nokogiri'
+gem 'flickraw'
 # Use SCSS for stylesheets
 gem 'sass'
 
@@ -67,9 +70,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'materialize-sass'
-  gem 'nokogiri'
-  gem 'flickraw'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
