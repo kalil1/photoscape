@@ -1,13 +1,13 @@
-# FOTOSCAPE
-FOTOSCAPE is a collaboration between Candice Davidson and Kalil Williams for our Wyncode Midterm Project.  Discover many cities from all over the world through photos. You may also create an account and include photos of your own.
+# Photoscape
+Photoscape is a collaboration between Candice Davidson and Kalil Williams for our Wyncode Midterm Project.  Discover many cities from all over the world through photos. You may also create an account and include photos of your own.
 
 
 
 ## Project Photos & Details
 
-![FOTOSCAPE](https://github.com/cndragn/fotoscape/blob/master/app/assets/images/fotoscape.png)
-![FOTOSCAPE](https://github.com/kalil1/photoscape/blob/master/app/assets/images/form.png)
-![FOTOSCAPE](https://github.com/kalil1/photoscape/blob/master/app/assets/images/uploaded.png)
+![Photoscape](https://github.com/cndragn/Photoscape/blob/master/app/assets/images/Photoscape.png)
+![Photoscape](https://github.com/kalil1/photoscape/blob/master/app/assets/images/form.png)
+![Photoscape](https://github.com/kalil1/photoscape/blob/master/app/assets/images/uploaded.png)
 
 ## Features
 * Search for a city and select a category to view photos.
